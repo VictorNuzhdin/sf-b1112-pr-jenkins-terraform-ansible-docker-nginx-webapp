@@ -31,7 +31,7 @@ For Skill Factory study project (B11, PR)
    
 5. кроме того, для ветки "main" репозитория настроен хостинг на "GitHub Pages",
    т.о работу веб-приложения можно проверить по URL:
-   https://victornuzhdin.github.io/sf-b1112-pr-jenkins-terraform-ansible-docker-nginx-webapp/
+   https://victornuzhdin.github.io/sf-b1112-pr-jenkins-terraform-ansible-docker-nginx-webapp/src/
 ```
 
 ### 03. Важное замечание
