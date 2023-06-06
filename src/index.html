@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hello from Nginx | Web App | Md5 File Calculator</title>
+
+	<!-- CryptoJS lib (remote source) -->
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js"></script>-->
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>-->
+	
+	<!-- CryptoJS lib (local source) -->
+	<script src="js/libs/crypto-js/4.0.0/core.min.js"></script>
+	<script src="js/libs/crypto-js/3.1.9-1/md5.js"></script>
+
+	<link rel="stylesheet" href="css/index.css?v=0.1">
+  </head>
+<body>
+
+<h1 class="title"><a class="a_title" href="#">Web App</a> :: Calculate MD5 from File</h1>
+
+<hr>
+<div class="debug_info">
+	<p>Webapp version..: 20230606.1</p>
+	<p>Webapp build dob: 2023.06.06 16:28:15</p>
+	<p>Client time.....: <span id="clientTime"></span></p>
+	<p>Current page md5: <span style="color: red;">???</span></p>
+	<p style="color: red;">ПРОБЛЕМА: <br>- невозможно вычислить MD5 хэш html страницы, <br>&nbsp; если она должна содержать свой MD5 хэш</p>
+	<p>---</p>
+</div>
+
+<pre>
+DROP FILE TO CONTAINER BELOW
+</pre>
+
+<!-- DROP FILE TO THIS BLOCK FOR GENERATING FILE MD5 CHECKSUM -->
+<div id="holder"></div>
+
+<!-- CALCULATED MD5 HASH -->
+<div class="debug_info">
+	<p>---</p>
+	<p>CALCULATED MD5 CHECKSUM:</p>
+	<br/>
+	<p><span id="md5summ">DROP FILE TO CONTAINER ABOVE TO BEGIN ^^^</span></p>
+</div>
+
+
+<!-- External JavaScript files -->
+<script src="js/welcome.js"></script>
+<script src="js/get_datetime.js"></script>
+<script src="js/get_md5fromFile.js"></script>
+
+<!-- Inpage JavaScript logic -->
+<script>
+</script>
+
+</body>
+</html>
