@@ -69,5 +69,7 @@ For Skill Factory study project (B11, PR)
 
 ### 04. Результат работы веб-приложения
 
+[Веб-приложение размещенное на GitHub Pages](https://victornuzhdin.github.io/sf-b1112-pr-jenkins-terraform-ansible-docker-nginx-webapp/src/)
+
 Скриншот1: Основная/Домашняя страница
 ![screen](_screens/webapp__index-page.png?raw=true)
