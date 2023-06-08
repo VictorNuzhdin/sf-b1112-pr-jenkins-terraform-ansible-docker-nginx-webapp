@@ -32,6 +32,46 @@ For Skill Factory study project (B11, PR)
 5. кроме того, для ветки "main" репозитория настроен хостинг на "GitHub Pages",
    т.о работу веб-приложения можно проверить по URL:
    https://victornuzhdin.github.io/sf-b1112-pr-jenkins-terraform-ansible-docker-nginx-webapp/src/
+
+6. для локального тестирования веб-приложения можно запустить его в Docker-контейнере, для этого нужно выполнить ряд команд:
+
+   ..для сборки Docker образа на основе конфигурации Dockerfile:
+
+     $ docker build . -t nve-nginx-alpine-317
+
+   ..для запуска Docker контейнера из образа:
+
+     $ docker run -d --rm --name webapp1 -p 8000:9000 -p 8001:9889 nve-nginx-alpine-317
+
+   ..для вывода информации о запущенном контейнере:
+
+     $ docker ps
+
+           CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS          PORTS                                                                                          NAMES
+           256fa911fb00   nve-nginx-alpine-317   "/docker-entrypoint.…"   19 minutes ago   Up 19 minutes   80/tcp, 0.0.0.0:8000->9000/tcp, :::8000->9000/tcp, 0.0.0.0:8001->9889/tcp, :::8001->9889/tcp   webapp1
+
+   ..для вывода информации о локально доступных образах:
+
+     $ docker images
+
+           REPOSITORY             TAG          IMAGE ID       CREATED          SIZE
+           nve-nginx-alpine-317   latest       a33b10ff1ffb   20 minutes ago   41.4MB
+           nginx                  alpine3.17   fe7edaf8a8dc   2 weeks ago      41.4MB
+
+   ..для проверки результата работы через браузер (если контейнер запущен на Jenkins сервере):
+
+     browser: http://jenkins.dotspace.ru:8001/         ## Web App :: Calculate MD5 from File (см. скриншоты ниже)
+              http://jenkins.dotspace.ru:8000/health   ## healthy
+     
+   ..для проверки результата работы через браузер (если контейнер запущен локально):
+
+     browser:  http://localhost:8001/                   ## Web App :: Calculate MD5 from File
+               http://loaclhost:8000/health             ## healthy
+
+   ..для остановки контейнера и удаления образа (для повторной дальнейшей сборки и запуска):
+
+     $ docker container stop webapp1
+     $ docker image rm nve-nginx-alpine-317
 ```
 
 ### 03. Важное замечание
@@ -70,6 +110,10 @@ For Skill Factory study project (B11, PR)
 ### 04. Результат работы веб-приложения
 
 [Веб-приложение размещенное на GitHub Pages](https://victornuzhdin.github.io/sf-b1112-pr-jenkins-terraform-ansible-docker-nginx-webapp/src/)
+
+[Веб-приложение развернутое в Docker контейнере (необходим ручной запуск контейнера)](http://jenkins.dotspace.ru:8001/)
+[Healthcheck статус Nginx в виде отдельного приложения в томже контейнере](http://jenkins.dotspace.ru:8000/health)
+
 
 Скриншот1: Основная/Домашняя страница
 ![screen](_screens/webapp__index-page.png?raw=true)
