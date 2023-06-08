@@ -1,4 +1,4 @@
-# Using Nginx Alpine as base Image (16 MB archived and 42 MB deployed)
+# Using Nginx Alpine as base Image (16 MB archived but 42 MB deployed)
 # base_image_publish_date: 2023.05.25
 FROM nginx:alpine3.17
 
