@@ -3,10 +3,6 @@
 FROM nginx:alpine3.17
 
 # Copy webapp src into Nginx DocumentRoot directory inside container
-#COPY ./src/* /usr/share/nginx/html/
-#COPY ./configs/nginx/webapp.conf /etc/nginx/conf.d/default.conf
-#COPY ./configs/nginx/health-check.conf /etc/nginx/conf.d/health-check.conf
-#
 COPY src/ /usr/share/nginx/html/
 COPY configs/nginx/webapp.conf /etc/nginx/conf.d/default.conf
 COPY configs/nginx/health-check.conf /etc/nginx/conf.d/health-check.conf
