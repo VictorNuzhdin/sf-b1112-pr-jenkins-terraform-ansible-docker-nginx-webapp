@@ -1,0 +1,9 @@
+{
+	"PROJECT_TITLE": "tgMessagingApp",
+	"TG_APP_API_ID": "${TGM_SECRET_1}",
+	"TG_APP_API_HASH": "${TGM_SECRET_2}",
+	"TG_USER_PHONE": "${TGM_SECRET_3}",
+	"TG_USER_NAME": "${TGM_SECRET_4}",
+	"TG_USER_ID": "${TGM_SECRET_5}",
+	"TG_ACCESS_HASH": "${TGM_SECRET_5}"
+}
