@@ -143,11 +143,11 @@ For Skill Factory study project (B11, PR)
 
 ### 04. Результат работы веб-приложения
 
-[Веб-приложение размещенное на GitHub Pages](https://victornuzhdin.github.io/sf-b1112-pr-jenkins-terraform-ansible-docker-nginx-webapp/src/)
+[Веб-приложение размещенное на GitHub Pages](https://victornuzhdin.github.io/sf-b1112-pr-jenkins-terraform-ansible-docker-nginx-webapp/src/) <br>
+[Веб-приложение развернутое в Docker контейнере (необходим ручной запуск контейнера)](http://jenkins.dotspace.ru:8001/) <br>
+[Healthcheck статус Nginx в виде отдельного приложения в томже контейнере](http://jenkins.dotspace.ru:8000/health) <br>
 
-[Веб-приложение развернутое в Docker контейнере (необходим ручной запуск контейнера)](http://jenkins.dotspace.ru:8001/)
-[Healthcheck статус Nginx в виде отдельного приложения в томже контейнере](http://jenkins.dotspace.ru:8000/health)
 
 
-Скриншот1: Основная/Домашняя страница
+Скриншот1: Основная/Домашняя страница <br>
 ![screen](_screens/webapp__index-page.png?raw=true)
