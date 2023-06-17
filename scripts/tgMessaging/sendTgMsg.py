@@ -30,8 +30,6 @@ TG_USER_PHONE = config['TG_USER_PHONE']
 TG_USER_NAME = config['TG_USER_NAME']
 TG_USER_ID = config['TG_USER_ID']
 TG_ACCESS_HASH = config['TG_ACCESS_HASH']
-TG_TOKEN = config['TG_TOKEN']
-TG_GROUP_ID = config['TG_GROUP_ID']
 
 ## Step-03
 ts = dt.now().strftime("%Y.%m.%d %H:%M:%S")
