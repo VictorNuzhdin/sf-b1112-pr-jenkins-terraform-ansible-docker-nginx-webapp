@@ -10,7 +10,14 @@ For Skill Factory study project (B11, PR)
 Веб приложение на стеке HTML + CSS + JavaScript для вычисления контрольной md5 суммы файла
 ```
 
-### 02. Порядок работы
+### 02. История изменений (не полная, сверху - новые)
+
+```bash
+2023.07.06 :: Реализовано Python приложение для отправки оповещения на свою электронную почту gmail (scripts/msgEmailGmail);
+2023.06.16 :: Реализовано Python приложение для отправки оповещения в свой Telegram канал через бота (scripts/msgTelegram_v1);
+```
+
+### 03. Порядок работы (будет уточняться)
 
 ```bash
 1. скопировать содержимое каталога "src" в каталог вашего веб сервера, 
@@ -72,9 +79,33 @@ For Skill Factory study project (B11, PR)
 
      $ docker container stop webapp1
      $ docker image rm nve-nginx-alpine-317
+
+7. для отправки тестового сообщения в свой Telegram канала:
+   *предварительно необходимо создать специального Telegram бота и получить набор API ключей
+    и добавить их в файл "scripts/msgTelegram_v1/config.json";
+   *выполнить шелл-скрипт создания виртуального Python окружения и установки Python зависимостей;
+   *выполнить шелл-скрипт отправки тестового сообщения в свой Telegram канал;
+
+    $ cd scripts/msgTelegram_v1/
+    $ ./sendTgMsgDeploy.sh
+    $ ./sendTgMsgTest.sh
+
+8. для отправки тестового сообщения на свой почтовый адрес электронной почты Gmail:
+   *предварительно необходимо создать или настроить учетную запись с активированной 2FA авторизацией,
+    сгенерировать API-ключ приложения (AppPassword)
+    и добавить его и логин в файл "scripts/msgEmailGmail/.env"
+        GMAIL_LOGIN=<your_gmail_login>
+        GMAIL_2FPASS=<your_gmail_app-passwd>
+   *выполнить шелл-скрипт создания виртуального Python окружения и установки Python зависимостей;
+   *выполнить шелл-скрипт отправки тестового сообщения на свой почтовый ящик Gmail;
+
+    $ cd scripts/msgEmailGmail/
+    $ nano .env
+    $ ./sendTgMsgDeploy.sh
+    $ ./sendTgMsgTest.sh
 ```
 
-### 03. Важные замечания
+### 04. Замечания
 
 ```bash
 #2
@@ -141,13 +172,22 @@ For Skill Factory study project (B11, PR)
     and that's pretty much what you're dealing with here, at the moment.
 ```
 
-### 04. Результат работы веб-приложения
+### 05. Результат работы веб-приложения
 
 [Веб-приложение размещенное на GitHub Pages](https://victornuzhdin.github.io/sf-b1112-pr-jenkins-terraform-ansible-docker-nginx-webapp/src/) <br>
 [Веб-приложение развернутое в Docker контейнере (необходим ручной запуск контейнера)](http://jenkins.dotspace.ru:8001/) <br>
 [Healthcheck статус Nginx в виде отдельного приложения в томже контейнере](http://jenkins.dotspace.ru:8000/health) <br>
-
+<br>
 
 
 Скриншот1: Основная/Домашняя страница <br>
 ![screen](_screens/webapp__index-page.png?raw=true)
+<br>
+
+Скриншот2: Тестовое оповещение пришедшее в Telegram канал через бота <br>
+![screen](_screens/alerting__telegram__test1.png?raw=true)
+<br>
+
+Скриншот3: Тестовое оповещение пришедшее на Gmail почтовый ящик <br>
+![screen](_screens/alerting__gmail__test1.png?raw=true)
+<br>

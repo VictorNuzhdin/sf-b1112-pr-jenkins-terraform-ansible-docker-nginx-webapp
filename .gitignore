@@ -1,7 +1,8 @@
 ## Global project exceptions
 .vscode
+.env
 
-## Python project exceptions (tgMessaging)
+## Python project exceptions
 __pycache__/
 env/
 *.pyc

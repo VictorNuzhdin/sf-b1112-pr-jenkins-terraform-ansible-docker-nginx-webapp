@@ -1,0 +1,9 @@
+{
+	"PROJECT_TITLE": "gmailMessagingApp",
+	"GMAIL_LOGIN": "<PROTECTED>",
+	"GMAIL_2FPASS": "<PROTECTED>",
+	"MSG_SUBJECT": "Jenkins Job Status",
+	"MSG_TITLE": "Deployment FAILED",
+	"LINK_JENKINS_SERVER": "https://jenkins.dotspace.ru",
+	"LINK_GITHUB_REPO": "https://github.com/VictorNuzhdin/sf-b1112-pr-jenkins-terraform-ansible-docker-nginx-webapp"
+}
